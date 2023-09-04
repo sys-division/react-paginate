@@ -15,17 +15,15 @@ const BreakView = (props) => {
   const className = breakClassName || 'break';
 
   return (
-    <li className={className}>
-      <a
-        className={breakLinkClassName}
-        role="button"
-        tabIndex="0"
-        aria-label={breakAriaLabel}
-        onKeyPress={breakHandler}
-        {...getEventListener(breakHandler)}
-      >
-        {breakLabel}
-      </a>
+    <li
+      className={className}
+      role="button"
+      tabIndex="0"
+      aria-label={breakAriaLabel}
+      onKeyPress={breakHandler}
+      {...getEventListener(breakHandler)}
+    >
+      {breakLabel}
     </li>
   );
 };

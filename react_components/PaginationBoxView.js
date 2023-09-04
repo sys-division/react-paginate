@@ -85,7 +85,7 @@ export default class PaginationBoxView extends Component {
     if (props.initialPage !== undefined && props.forcePage !== undefined) {
       console.warn(
         `(react-paginate): Both initialPage (${props.initialPage}) and forcePage (${props.forcePage}) props are provided, which is discouraged.` +
-          ' Use exclusively forcePage prop for a controlled component.\nSee https://reactjs.org/docs/forms.html#controlled-components'
+        ' Use exclusively forcePage prop for a controlled component.\nSee https://reactjs.org/docs/forms.html#controlled-components'
       );
     }
 
@@ -478,8 +478,8 @@ export default class PaginationBoxView extends Component {
         ) {
           const useBreakAriaLabel =
             index < selected
-              ? breakAriaLabels.backward
-              : breakAriaLabels.forward;
+            ? breakAriaLabels.backward
+            : breakAriaLabels.forward;
           breakView = (
             <BreakView
               key={index}
@@ -577,38 +577,34 @@ export default class PaginationBoxView extends Component {
         role="navigation"
         aria-label="Pagination"
       >
-        <li className={previousClasses}>
-          <a
-            className={previousLinkClasses}
-            href={this.getElementHref(selected - 1)}
-            tabIndex={isPreviousDisabled ? '-1' : '0'}
-            role="button"
-            onKeyPress={this.handlePreviousPage}
-            aria-disabled={previousAriaDisabled}
-            aria-label={previousAriaLabel}
-            rel={prevRel}
-            {...this.getEventListener(this.handlePreviousPage)}
-          >
-            {previousLabel}
-          </a>
+        <li
+          className={previousClasses}
+          href={this.getElementHref(selected - 1)}
+          tabIndex={isPreviousDisabled ? '-1' : '0'}
+          role="button"
+          onKeyPress={this.handlePreviousPage}
+          aria-disabled={previousAriaDisabled}
+          aria-label={previousAriaLabel}
+          rel={prevRel}
+          {...this.getEventListener(this.handlePreviousPage)}
+        >
+          {previousLabel}
         </li>
 
         {this.pagination()}
 
-        <li className={nextClasses}>
-          <a
-            className={nextLinkClasses}
-            href={this.getElementHref(selected + 1)}
-            tabIndex={isNextDisabled ? '-1' : '0'}
-            role="button"
-            onKeyPress={this.handleNextPage}
-            aria-disabled={nextAriaDisabled}
-            aria-label={nextAriaLabel}
-            rel={nextRel}
-            {...this.getEventListener(this.handleNextPage)}
-          >
-            {nextLabel}
-          </a>
+        <li
+          className={nextClasses}
+          href={this.getElementHref(selected + 1)}
+          tabIndex={isNextDisabled ? '-1' : '0'}
+          role="button"
+          onKeyPress={this.handleNextPage}
+          aria-disabled={nextAriaDisabled}
+          aria-label={nextAriaLabel}
+          rel={nextRel}
+          {...this.getEventListener(this.handleNextPage)}
+        >
+          {nextLabel}
         </li>
       </ul>
     );

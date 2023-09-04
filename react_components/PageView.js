@@ -44,20 +44,18 @@ const PageView = (props) => {
   }
 
   return (
-    <li className={pageClassName}>
-      <a
-        rel={rel}
-        role={!href ? 'button' : undefined}
-        className={pageLinkClassName}
-        href={href}
-        tabIndex={selected ? '-1' : '0'}
-        aria-label={ariaLabel}
-        aria-current={ariaCurrent}
-        onKeyPress={pageSelectedHandler}
-        {...getEventListener(pageSelectedHandler)}
-      >
-        {pageLabelBuilder(page)}
-      </a>
+    <li
+      className={pageClassName}
+      rel={rel}
+      role={!href ? 'button' : undefined}
+      href={href}
+      tabIndex={selected ? '-1' : '0'}
+      aria-label={ariaLabel}
+      aria-current={ariaCurrent}
+      onKeyPress={pageSelectedHandler}
+      {...getEventListener(pageSelectedHandler)}
+    >
+      {pageLabelBuilder(page)}
     </li>
   );
 };
